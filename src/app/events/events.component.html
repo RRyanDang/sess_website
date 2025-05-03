@@ -1,0 +1,18 @@
+<!-- <p>events works!</p> -->
+
+<app-banner [title]="title" [url]="bannerUrl"></app-banner>
+
+<div class="max-w-full my-8">
+    
+    <mat-tab-group (selectedIndexChange)="onTabChange($event)">
+        @for (item of items; track $index) {
+            <mat-tab [label]="item.title" [labelClass]="'font-gotham uppercase'"> 
+                <div class="event-grid-container">
+                    @for (event of item.events; track $index) {
+                        <app-event-card [event]="event" ></app-event-card>
+                    }
+                </div>
+            </mat-tab>
+        }
+      </mat-tab-group>
+</div>

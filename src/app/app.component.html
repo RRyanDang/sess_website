@@ -1,0 +1,24 @@
+<!-- <app-header></app-header>
+<h1 class="text-3xl font-bold underline">
+  Hello world!
+</h1> -->
+<div class="flex flex-col min-h-screen">
+  <div class="max-w-screen-xl w-full mx-auto">
+    <app-header></app-header>
+  </div>
+  
+  <hr class="w-full">
+  
+  <div class="flex-grow w-full">
+    <div class="max-w-screen-xl w-full mx-auto px-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div> 
+  <hr class="w-full">
+  <div class="w-full bg-red-600 p-4">
+    <div class="max-w-screen-xl w-full mx-auto px-4">
+      <app-footer></app-footer>
+    </div>
+  </div>
+</div>
+

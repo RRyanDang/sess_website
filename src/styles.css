@@ -1,0 +1,179 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('./fonts.css'); */
+
+ /* thin  */
+ @font-face {
+  font-family: 'Gotham';
+  src: url('./assets/gotham-fonts/GothamThin.otf');
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* thin italic */
+@font-face {
+  font-family: 'Gotham';
+  src: url('./assets/gotham-fonts/GothamThinItalic.otf');
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* extra light */
+@font-face {
+  font-family: 'Gotham';
+  src: url('./assets/gotham-fonts/GothamXLight.otf');
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* extra light italic */
+@font-face {
+  font-family: 'Gotham';
+  src: url('./assets/gotham-fonts/GothamXLightItalic.otf');
+  font-weight: 200;
+  font-style: italic;
+}
+
+/* light */
+@font-face {
+  font-family: 'Gotham';
+  src: url('./assets/gotham-fonts/GothamLight.otf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* light italic */
+@font-face {
+  font-family: 'Gotham';
+  src: url('./assets/gotham-fonts/GothamLightItalic.ttf');
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* normal */
+@font-face {
+  font-family: 'Gotham';
+  src: url('./assets/gotham-fonts/GothamBook.ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* normal italic */
+@font-face {
+  font-family: 'Gotham';
+  src: url('./assets/gotham-fonts/GothamBookItalic.otf');
+  font-weight: 400;
+  font-style: italic;
+}
+
+
+/* medium */
+@font-face {
+  font-family: 'Gotham';
+  src: url('./assets/gotham-fonts/GothamMedium.ttf');
+  font-weight: 500;
+  font-style: normal;
+}
+
+/* medium italic */
+@font-face {
+  font-family: 'Gotham';
+  src: url('./assets/gotham-fonts/GothamMediumItalic.ttf');
+  font-weight: 500;
+  font-style: italic;
+}
+
+
+/* bold */
+@font-face {
+  font-family: 'Gotham';
+  src: url('./assets/gotham-fonts/GothamBold.otf');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* bold italic*/
+@font-face {
+  font-family: 'Gotham';
+  src: url('./assets/gotham-fonts/GothamBoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+/* black  */
+@font-face {
+  font-family: 'Gotham';
+  src: url('./assets/gotham-fonts/GothamBlack.otf');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('./assets/gotham-fonts/GothamUltraItalic.otf');
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+
+
+
+
+
+
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(154, 154, 154, 0.5);
+    border-radius: 8px;
+    /* border: 3px solid transparent; */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  html {
+    scrollbar-gutter: stable both-edges;
+  }
+
+  @layer components {
+
+    .event-grid-container {
+        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-12;
+    }
+
+    .navigation-item {
+      @apply hover:text-red-500 hover:cursor-pointer transition-all duration-300 block px-3 py-2 text-lg
+    }
+
+    .carousel-img {
+      @apply block w-full rounded-lg h-[280px] md:h-[600px] object-cover
+    }
+
+    .carousel-img-text{
+      @apply absolute inset-x-[15%] bottom-0 py-0 md:bottom-5 md:py-5 text-center text-white md:block bg-black/40
+    }
+
+}
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

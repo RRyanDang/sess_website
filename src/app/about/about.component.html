@@ -1,0 +1,22 @@
+
+
+  <!-- <p>events works!</p> -->
+
+<app-banner [title]="title" [url]="bannerUrl"></app-banner>
+
+<div class="max-w-full my-8">
+      <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+        @for (item of items; track item.link) {
+          <a mat-tab-link
+          (click)="activeLink = item.link"
+          [active]="activeLink == item.link"
+          [routerLink]="item.link"
+          class="font-gotham uppercase"
+            > {{item.title}} </a>
+        }
+      </nav>
+      <mat-tab-nav-panel #tabPanel>
+        <router-outlet></router-outlet>
+      </mat-tab-nav-panel>
+</div>
+

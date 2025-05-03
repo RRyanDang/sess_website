@@ -1,0 +1,14 @@
+<nav class="flex justify-between w-full">
+
+    <div *ngFor="let item of items" 
+    [ngStyle]="{'width': 100/items.length  + '%'}"
+    class="flex flex-col items-center justify-center">
+        <a [routerLink]="item.link" routerLinkActive="text-red-600" #rla1="routerLinkActive" class=" py-4 hover:text-red-600" >
+            <span class="relative">
+              {{ item.title}}
+            </span>
+        </a>
+        <hr [ngClass]="{'bg-red-600': rla1.isActive, 'bg-gray-200': !rla1.isActive}" class=" bottom-0 left-0 w-full h-1 bg-opacity-100 transition-colors duration-500" >
+    </div>
+
+  </nav>

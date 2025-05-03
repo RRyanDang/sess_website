@@ -1,0 +1,55 @@
+<div class="max-w-full">
+    <section class="py-8 bg-red-600">
+        <h2 class="text-3xl text-center text-white font-bold font-gotham uppercase">Seneca Engineering Competition</h2>
+        <p class="text-xl text-center text-white font-gotham font-normal mt-4">November 16, 2024</p>
+
+    </section>
+
+    <section class="my-8">
+            <h1 class="text-2xl font-bold p-2 font-gotham text-red-600">Registration</h1>
+            <p class="p-2 text-lg font-light">The Seneca Engineering Competition Early Registration is open now. Click <a class="text-red-600" target="_blank" href="https://forms.office.com/r/SLbWb6aQpF">here</a> to register! </p>
+    </section>
+    
+    <hr>
+    
+    <section class="my-8">
+            <h1 class="text-2xl font-bold p-2 font-gotham text-red-600">What is SEC?</h1>
+            <p class="p-2 text-lg font-light">The Seneca Engineering Competition (SEC) offers engineering students an opportunity to showcase their skills in innovation, design, and communication by tackling real-world challenges. Participants can choose from a range of challenges to compete in. Winners will advance to represent Seneca at the Ontario Engineering Competition, where they will compete against teams from other schools across the province. </p>
+            <br>
+            <p class="p-2 text-lg font-bold">The SEC has two challenges: <span class="text-red-600">Programming</span> and <span class="text-red-600">Re-Engineering</span>. </p>
+
+    </section>
+
+    <hr>
+
+    <section class="flex flex-col md:flex-row max-w-full my-8 gap-6">
+      <div>
+        <h1 class="text-2xl font-bold p-2 font-gotham text-red-600">{{categories[0].title}}</h1>
+        <p class="p-2 text-lg font-light">{{categories[0].details}}</p>
+        <h1 class="text-xl font-bold p-2 font-gotham">How it works:</h1>
+        <p class="p-2 text-lg font-light">{{categories[0].description}}</p>
+
+      </div>
+      <div class="box-border">
+        <img [src]="categories[0].image" class="w-full md:w-auto md:max-w-[300px] rounded-lg" alt="Image description">
+      </div>
+    </section>
+
+    <hr>
+
+    <section class="flex flex-col md:flex-row-reverse max-w-full my-8 gap-6" dir="rlt">
+        <div>
+          <h1 class="text-2xl font-bold p-2 font-gotham text-red-600">{{categories[1].title}}</h1>
+          <p class="p-2 text-lg font-light">{{categories[1].details}}</p>
+          <h1 class="text-xl font-bold p-2 font-gotham">How it works:</h1>
+          <p class="p-2 text-lg font-light">{{categories[1].description}}</p>
+  
+        </div>
+
+        <div class="box-border">
+            <img [src]="categories[1].image" class="w-full md:w-auto md:max-w-[300px] rounded-lg" alt="Image description">
+          </div>
+      </section>
+
+
+  </div>

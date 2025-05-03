@@ -1,0 +1,53 @@
+
+<div class="flex flex-col space-y-4 my-4">
+    <div *ngFor="let info of sessInfo; index as i " class="border rounded-lg">
+        <div class="flex items-center justify-between p-4 cursor-pointer" (click)="toggleSection(i)">
+            <h2 class="text-lg font-normal text-red-600">{{info.header}}</h2>
+            <svg #arrow{{i}} [id]="'arrow' + i" class="w-6 h-6 transform transition-transform duration-300" viewBox="0 0 24 24">
+                <path d="M12 15.41L18.59 9L20 10.41L12 18.41L4 10.41L5.41 9L12 15.41Z" />
+            </svg>
+        </div>
+        <div #content{{i}} [id]="'content' + i" class="p-4 hidden transform transition-transform duration-300">
+            <p>{{info.content}}</p>
+        </div>
+    </div>
+</div>
+
+<!-- set 2 -->
+
+<!-- <div class="flex flex-col space-y-4">
+    <div class="border rounded-lg">
+      <div class="flex items-center justify-between p-4 cursor-pointer" (click)="toggleSection(1)">
+        <h2 class="text-lg font-semibold">Section 1</h2>
+        <svg id="arrow1" class="w-6 h-6 transform transition-transform duration-300" viewBox="0 0 24 24">
+          <path d="M12 15.41L18.59 9L20 10.41L12 18.41L4 10.41L5.41 9L12 15.41Z" />
+        </svg>
+      </div>
+      <div id="content1" [ngClass]="{'max-h-0 opacity-0': !isSectionVisible[1], 'max-h-full opacity-100': isSectionVisible[1]}" class="overflow-hidden transform transition-all duration-300">
+        <p class="p-4">Section 1 content goes here.</p>
+      </div>
+    </div>
+    <div class="border rounded-lg">
+      <div class="flex items-center justify-between p-4 cursor-pointer" (click)="toggleSection(2)">
+        <h2 class="text-lg font-semibold">Section 2</h2>
+        <svg id="arrow2" class="w-6 h-6 transform transition-transform duration-300" viewBox="0 0 24 24">
+          <path d="M12 15.41L18.59 9L20 10.41L12 18.41L4 10.41L5.41 9L12 15.41Z" />
+        </svg>
+      </div>
+      <div id="content2" [ngClass]="{'max-h-0 opacity-0': !isSectionVisible[2], 'max-h-full opacity-100': isSectionVisible[2]}" class="overflow-hidden transform transition-all duration-300">
+        <p class="p-4">Section 2 content goes here.</p>
+      </div>
+    </div>
+    <div class="border rounded-lg">
+      <div class="flex items-center justify-between p-4 cursor-pointer" (click)="toggleSection(3)">
+        <h2 class="text-lg font-semibold">Section 3</h2>
+        <svg id="arrow3" class="w-6 h-6 transform transition-transform duration-300" viewBox="0 0 24 24">
+          <path d="M12 15.41L18.59 9L20 10.41L12 18.41L4 10.41L5.41 9L12 15.41Z" />
+        </svg>
+      </div>
+      <div id="content3" [ngClass]="{'max-h-0 opacity-0': !isSectionVisible[3], 'max-h-full opacity-100': isSectionVisible[3]}" class="overflow-hidden transform transition-all duration-300">
+        <p class="p-4">Section 3 content goes here.</p>
+      </div>
+    </div>
+  </div> -->
+  
