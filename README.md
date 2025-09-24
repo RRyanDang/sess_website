@@ -1,6 +1,7 @@
 # SessWebsite
 
 Official Website Link: https://www.senecaengsoc.ca/home
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
 ## Development server
