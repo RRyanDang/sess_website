@@ -6,6 +6,10 @@ interface Section {
   header: string;
   content: string;
 }
+interface TeamMember{
+  name: string;
+  title: string;
+}
 @Component({
   selector: 'app-who-we-are',
   standalone: true,
@@ -31,14 +35,41 @@ export class WhoWeAreComponent {
     }
   ];
 
-  toggleSection(section: number) {
+  teamMember: TeamMember[]=[
+    {
+      name: "Jasleen",
+      title: "President",
+    },
+    {
+      name: "Crissha Kaye Salaritan",
+      title: "VPC",
+    },
+    {
+      name: "Declan Graham",
+      title: "VPX"
+    },
+    {
+      name: "Vinh Minh (Ryan) Dang",
+      title: "VPA"
+    },
+    {
+      name: "Sthapanavichet Long",
+      title: "Treasurer"
+    }
+  ];
 
+  toggleSection(section: number) {
     const arrow = document.getElementById(`arrow${section}`);
     const content = document.getElementById(`content${section}`);
     if(arrow && content) {
       content.classList.toggle('hidden');
       arrow.classList.toggle('rotate-180');
     }
+  }
+
+  teamExpanded = false; 
+  toggleTeam() {
+    this.teamExpanded = !this.teamExpanded;
   }
 
   // for set 2 html
