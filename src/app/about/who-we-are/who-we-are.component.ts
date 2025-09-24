@@ -1,14 +1,19 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { CommonModule, NgFor } from '@angular/common';
-import { trigger, state, style, transition, animate } from '@angular/animations';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
+// import { trigger, state, style, transition, animate } from '@angular/animations';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 interface Section {
   header: string;
   content: string;
 }
-interface TeamMember{
+interface TeamMember {
   name: string;
   title: string;
+}
+interface YearlyTeam{
+  year: string;
+  member: TeamMember[];
+  toggleState: boolean;
 }
 @Component({
   selector: 'app-who-we-are',
@@ -19,7 +24,21 @@ interface TeamMember{
 })
 export class WhoWeAreComponent {
 
-  // static data
+  //################################ FUNCTION ################################
+  toggleSection(section: number) {
+    const arrow = document.getElementById(`arrow${section}`);
+    const content = document.getElementById(`content${section}`);
+    if (arrow && content) {
+      content.classList.toggle('hidden');
+      arrow.classList.toggle('rotate-180');
+    }
+  }
+
+  toggleTeam(team: YearlyTeam) {
+    team.toggleState = !team.toggleState;
+  }
+
+  //################################ DATA SECTION ################################
   sessInfo: Section[] = [
     {
       header: "Who We Are",
@@ -35,55 +54,135 @@ export class WhoWeAreComponent {
     }
   ];
 
-  teamMember: TeamMember[]=[
+  member2022_2023: TeamMember[] = [
     {
-      name: "Jasleen",
+      name: "Dayson Yiyuan Dong",
       title: "President",
     },
     {
-      name: "Crissha Kaye Salaritan",
-      title: "VPC",
+      name: "Kannav Sethi",
+      title: "VP Internal",
     },
     {
-      name: "Declan Graham",
-      title: "VPX"
+      name: "Dennis Audu",
+      title: "VP Finance"
+    },
+  ];
+
+  member2023_2024: TeamMember[] = [
+    {
+      name: "Dayson Yiyuan Dong",
+      title: "President",
     },
     {
-      name: "Vinh Minh (Ryan) Dang",
-      title: "VPA"
+      name: "Kannav Sethi",
+      title: "VP Internal",
+    },
+    {
+      name: "Dennis Audu",
+      title: "VP Finance"
+    },
+    {
+      name: "George Paul Robert",
+      title: "VP Communication",
+    },
+    {
+      name: "Crissha Salaritan",
+      title: "VP Student Life",
+    },
+    {
+      name: 'Jasleen Kaur & Ma Toan Bach',
+      title:"VP Academic",
+    },
+    {
+      name: "Kevin Liu",
+      title: "Director NEM",
+    },
+  ];
+
+  member2024_2025: TeamMember[] = [
+    {
+      name: "Dayson Yiyuan Dong",
+      title: "President",
+    },
+    {
+      name: "Kannav Sethi",
+      title: "VP Internal",
     },
     {
       name: "Sthapanavichet Long",
-      title: "Treasurer"
-    }
+      title: "VP Finance",
+    },
+    {
+      name: "George Paul Robert",
+      title: "VP Communication"
+    },
+    {
+      name: "Crissha Salaritan",
+      title: "VP Student Life",
+    },
+    {
+      name: 'Jasleen Kaur',
+      title:"VP Academic",
+    },
+    {
+      name: "Kevin Liu",
+      title: "Director NEM",
+    },
+    {
+      name: "Rajini Paranagamage",
+      title:"Media Coordinator",
+    },
   ];
 
-  toggleSection(section: number) {
-    const arrow = document.getElementById(`arrow${section}`);
-    const content = document.getElementById(`content${section}`);
-    if(arrow && content) {
-      content.classList.toggle('hidden');
-      arrow.classList.toggle('rotate-180');
-    }
-  }
+  member2025_2026: TeamMember[]=[
+    {
+      name: "Jasleen Kaur",
+      title: "President",
+    },
+    {
+      name: "Crissha Salaritan",
+      title:"VP Internal & VP Student Life",
+    },
+    {
+      name: "Sthapanavichet Long",
+      title: "VP Finance",
+    },
+    {
+      name: "Declan Graham",
+      title: "VP Communication",
+    },
+    {
+      name: "Vinh Minh (Ryan) Dang",
+      title: "VP Academic",
+    },
+    {
+      name: "Rajini Paranagamage",
+      title:"Media Coordinator",
+    },
+  ];
 
-  teamExpanded = false; 
-  toggleTeam() {
-    this.teamExpanded = !this.teamExpanded;
-  }
-
-  // for set 2 html
-
-  // isSectionVisible: { [key: number]: boolean } = {
-  //   1: false,
-  //   2: false,
-  //   3: false
-  // };
-
-  // toggleSection(sectionNumber: number): void {
-  //   this.isSectionVisible[sectionNumber] = !this.isSectionVisible[sectionNumber];
-  // }
-
-
+  teams: YearlyTeam[] = [
+    {
+      year: "2025 - 2026",
+      member: this.member2025_2026,
+      toggleState: false
+    },
+    {
+      year: "2024 - 2025",
+      member: this.member2024_2025,
+      toggleState: false
+    },
+    {
+      year: "2023 - 2024",
+      member: this.member2023_2024,
+      toggleState: false
+    },
+    {
+      year: "2022 - 2023",
+      member: this.member2022_2023,
+      toggleState: false
+    },
+  ];
 }
 
