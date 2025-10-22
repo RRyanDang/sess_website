@@ -11,6 +11,7 @@ import { AuthComponent } from './auth/auth.component';
 import { ProfileComponent } from './profile/profile.component';
 import { MsalGuard } from '@azure/msal-angular';
 import { SecComponent } from './sec/sec.component';
+import { MeetTheTeamComponent } from './meet-the-team/meet-the-team.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -23,7 +24,8 @@ export const routes: Routes = [
         loadChildren: () => import('./events/events.route')
         .then (r=>r.eventsRoutes)
     },
-    { path: 'sec', component: SecComponent }
+    { path: 'sec', component: SecComponent },
+    {path: 'meet-the-team',component: MeetTheTeamComponent}
     // { path: 'resources', component: ResourcesComponent },
     // { path: 'auth', component: AuthComponent },
     // { path: 'profile', component: ProfileComponent, canActivate: [MsalGuard]},
